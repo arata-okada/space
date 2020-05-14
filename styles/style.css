@@ -1,0 +1,568 @@
+@charset "utf-8"
+
+/* リセットcss */
+
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+
+body {
+  line-height:1;
+  margin: 0px;
+  font-family: serif;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+  display:block;
+}
+
+nav ul {
+  list-style:none;
+}
+
+blockquote, q {
+  quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content:'';
+  content:none;
+}
+
+a {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color:#ff9;
+  color:#000;
+  text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color:#ff9;
+  color:#000; 
+  font-style:italic;
+   font-weight:bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom:1px dotted;
+  cursor:help;
+}
+
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/* change border color to suit your needs */
+hr {
+  display:block;
+  height:1px;
+  border:0;   
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+input, select {
+  vertical-align:middle;
+}
+
+.section-title{
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 0;
+    text-align: center;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.wrap{
+    width: 80%;
+    margin: 0 auto 50px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.between{
+    justify-content: space-between;
+}
+.around{
+    justify-content: space-around;
+}  
+h3{
+    margin: 0;
+}
+
+/* header */
+.header-top{
+    position: fixed;
+    width: 100%;
+    z-index: 950;
+    height: 70px;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(190, 190, 190, 0));
+}
+.header-logo{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 35px;
+    line-height: 50px;
+    color: rgb(238, 238, 238);
+
+}
+.header-nav li{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 35px;
+}
+.header-nav a{
+    color: rgb(238, 238, 238);
+}
+
+#hamburger,
+.menu-content{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+
+    /* header-nav */
+    .header-nav{
+        display: none;
+    }
+    
+    /* hamburger */
+    #hamburger{
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+        top: 15px;
+        right: 20px;
+        transition: .4s;
+    }
+    #hamburger span{
+        position: absolute;
+        left: 2px;
+        display: block;
+        width: 35px;
+        height: 2px;
+        background-color: #fff;
+        transition: .8s;
+    }
+    #hamburger span:nth-of-type(1){
+        top: 10px;
+    }
+    #hamburger span:nth-of-type(2){
+        top: 20px;
+    }
+    #hamburger span:nth-of-type(3){
+        top: 30px;
+    }
+    .hamburger.active span:nth-of-type(1){
+        top: 20px;
+        transform: rotate(45deg);
+    }
+    .hamburger.active span:nth-of-type(2){
+        opacity: 0;
+    }
+    .hamburger.active span:nth-of-type(3){
+        top: 20px;
+        transform: rotate(-45deg);
+    }
+    
+    /* menu-content */
+    .menu-content{
+        display: block;
+    }
+    .menu-content .menu-title{
+        margin: 40px 20px;
+        font-size: 2.2rem;
+        color: #333333;
+        text-align: center;
+        font-weight: bold;
+    }
+    .menu-content{
+        width: calc(100% - 80px);
+        height: 100%;
+        text-align: center;
+        transition: .2s;
+        position: fixed;
+        top: 0;
+        left: calc(-100% - 80px);
+        background: #fff;
+        color: #333333;
+        box-shadow: 80px 0 rgba(38, 98, 213, 0.3);
+    }
+    .menu-content li a{
+        color: #333333;
+        margin: 15px;
+        padding: 5px;
+        border-bottom: 0.5px solid #2662D5;
+        text-decoration: none;
+        display: block;
+    }
+    .menu-content li{
+        width: 100%;
+        text-align: left;
+    }
+    .menu-content.open{
+        left: 0;
+    }
+}
+
+
+
+/* eyecatch */
+#eyecatch{
+    background: url(../images/earth-1365995_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+}
+.eyecatch-title{
+    position: absolute;
+    left: 100px;
+    top: 430px;
+    font-style: italic;
+    font-size: 65px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 11px;
+}
+.news{
+    width: 50%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.right-news{
+    width: 80%;
+    height: 70px;
+    background-color: #fff;
+}
+.left-news{
+    width: 20%;
+    height: 70px;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    z-index: 300;
+}
+
+@media screen and (max-width: 768px){
+    .eyecatch-title{
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        padding: 64px;
+    }
+    .news{
+        width: 100%;
+    }
+}
+
+
+/* about */
+#about{
+    background-color: #000;
+    color: rgb(238, 238, 238);
+    padding: 120px 0 152px 232px;
+    position: relative;
+    z-index: 100;
+}
+#about img{
+    width: 40%;
+    position: absolute;
+    bottom: -10%;
+    right: 5%;
+    z-index: -999;
+}
+.about-box{
+    width: 65%;
+    position: relative;
+}
+.about-box h2{
+    margin: 32px 0;
+    font-size: 38px;
+}
+.about-box p{
+    margin-bottom: 24px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 3px;
+}
+.btn-detail{
+    background-color: #fff;
+    color: #000;
+}
+
+@media screen and (max-width: 768px){
+    #about{
+        background-color: #000;
+        color: rgb(238, 238, 238);
+        padding: 50px;
+        position: relative;
+    }
+    .about-box{
+        width: 90%;
+        margin: 0 auto;
+    }
+    #about img{
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+        position: absolute;
+        top: 180px;
+        left: 140px;
+    }
+    
+}
+
+
+
+/* service */
+#service{
+    background-color: #ebebeb;
+    margin: 160px 0;
+}
+.service{
+    padding-bottom: 160px;
+    position: relative;
+}
+.top-service img{
+    width: 50%;
+    margin-left: 50%;
+}
+.bottom-service img{
+    width: 50%;
+    margin-right: 50%;
+}
+.box{
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    background: #fff;
+    width: 40%;
+    padding: 5% 5%;
+    box-sizing: border-box;
+}
+.top-box{
+    position: absolute;
+    left: 270px;
+}
+.bottom-box{
+    left: 40%;
+}
+.btn-service{
+    border: 1px solid #cccccc;
+    float: right;
+    background-color: #fff;
+    color: #000;
+}
+.title{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    #service{
+        margin: 80px 0;
+        padding: 0 5%;
+    }
+    .top-service,
+    .bottom-service{
+        padding-bottom: 80px;
+    }
+    .top-service img,
+    .bottom-service img{
+        width: 100%;
+        margin: 0;
+    }
+    .top-box,
+    .bottom-box{
+        box-sizing: border-box;
+        position: static;
+        width: 100%;
+    }
+    
+}
+
+
+/* sub */
+.sub{
+    color: rgb(238, 238, 238);
+    font-weight: bold;
+}
+.company{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/fantasy-2861107_1920.jpg);
+    background-size: cover;
+    width: 48%;
+    height: 300px;
+    text-align: center;
+}
+.recruit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../images/sunset-850873_1920.jpg);
+    background-size: cover;
+    width: 48%;
+    height: 300px;
+    text-align: center;
+}
+.sub a{
+    color: #FFF;
+}
+.p-margin{
+    margin: 0;
+}
+
+@media screen and (max-width: 768px){
+    .company,
+    .recruit{
+        width: 100%;
+    }
+}
+
+
+
+/* faq */
+#faq{    
+    width: 70%;
+    height: 150px;
+    margin: 160px auto;
+    background-color: #000;
+    color: rgb(238, 238, 238);
+    position: relative;
+    text-align: center;
+    line-height: 150px;
+}
+#faq p{
+    margin: 0;
+}
+.faq{
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    left: 30px;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px){
+    #faq{
+        width: 90%;
+        margin: 80px auto;
+    }
+}
+
+
+
+/* contact */
+#contact{
+    background: url(../images/road-949832_1920.jpg);
+    background-size: cover;
+    text-align: center;
+    padding: 70px 90px 90px;
+    color: #fff;
+}
+.contact-bold{
+    font-weight: bold;
+}
+.contact-p{
+    font-size: 30px;
+    font-weight: bold;
+}
+.btn-contact{
+    background-color: rgba(0 0, 0, 0.3);
+    color: #fff;
+    border: 1px solid #cccccc;
+}
+
+@media screen and (max-width: 768px){
+    #contact{
+        padding: 30px;
+    }
+}
+
+
+footer{
+    background-color: #000;
+    color: #cccccc;
+    text-align: center;
+}
+
+/* topへ戻るボタン */
+#top-btn{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* フェイドイン */
+.fadein{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s;
+}
